@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a [Next.js](https://nextjs.org) AUTO REPAIR STARTER KIT
 
-## Getting Started
+## Structure of Landing Page:
 
-First, run the development server:
++------------------------------------------------------------------+
+| Top Bar: Phone, Address, Operating Hours (Image 2 Structure) |
++------------------------------------------------------------------+
+| Navigation: Logo | Services | About | Reviews | [BOOK NOW] CTA |
++------------------------------------------------------------------+
+| HERO SECTION (Image 1 High-Conversion Layout): |
+| - High-contrast stencil headline ("AUTO REPAIR DONE RIGHT.") |
+| - Integrated Quick Quote Form Overlay (Name, Phone, Service) |
++------------------------------------------------------------------+
+| TRUST STATS BAR: 25+ Yrs | ASE Certified | Sat Hours | 100% Rate |
++------------------------------------------------------------------+
+| INDUSTRIAL HAZARD STRIPE DIVIDER (Signature Accent) |
++------------------------------------------------------------------+
+| SERVICES SECTION (Image 1 Numbered Row Design): |
+| - Off-white background (#F4F4F0) for high visual contrast |
+| - Bold "01, 02, 03" horizontal accordion / service listings |
++------------------------------------------------------------------+
+| STOREFRONT SPOTLIGHT (Image 1): Shop Photo + Address Tagging |
++------------------------------------------------------------------+
+| GALLERY ("RECENT WORK"): 2-Column Real Shop Repairs Split |
++------------------------------------------------------------------+
+| TESTIMONIALS SECTION (Image 1): Rating metrics & customer cards |
++------------------------------------------------------------------+
+| HAZARD STRIPE DIVIDER |
++------------------------------------------------------------------+
+| FOOTER QUOTE & CONTACT (Image 2 Form + Image 1 Info Layout): |
+| - Left: Direct phone, address, hours |
+| - Right: Resend-powered full quote request form |
++------------------------------------------------------------------+
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+auto-repair-starter/
+├── app/
+│   ├── layout.tsx                  # Root layout (fonts, metadata, providers)
+│   ├── page.tsx                    # Landing page assembling sections
+│   ├── globals.css                 # Tailwind v4 theme setup & CSS variables
+│   └── api/
+│       └── quote/route.ts          # Resend API endpoint for quote submissions
+├── components/
+│   ├── ui/                         # Reusable design primitives (TV styled)
+│   │   ├── button.tsx
+│   │   ├── badge.tsx
+│   │   ├── card.tsx
+│   │   └── hazard-stripe.tsx       # Industrial striped section divider
+│   ├── layout/
+│   │   ├── header.tsx              # Top bar + main navigation
+│   │   └── footer.tsx
+│   └── sections/                   # High-converting page sections
+│       ├── hero-quote.tsx          # Hero with quick quote form overlay
+│       ├── trust-bar.tsx           # ASE / Experience stats ribbon
+│       ├── services-list.tsx       # Numbered expandable rows (from Image 1)
+│       ├── services-grid.tsx       # Alternative 8-card grid (from Image 2)
+│       ├── storefront-spotlight.tsx# Location & shop image showcase
+│       ├── gallery-showcase.tsx    # Recent work split gallery
+│       ├── testimonials.tsx        # Customer reviews & ratings
+│       └── quote-section.tsx       # Comprehensive bottom contact form
+├── config/
+│   └── site.ts                     # SINGLE SOURCE OF TRUTH (All client data)
+├── lib/
+│   ├── resend.ts                   # Resend client instance
+│   └── variants.ts                 # Tailwind Variants helper utilities
+└── public/
+    └── images/                     # Placeholder images for shop assets

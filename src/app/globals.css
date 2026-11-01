@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-primary: #e63946;
+    --brand-primary-hover: #c52233;
+    --bg-dark: #0d306f;
+    --bg-dark-surface: #333;
+    --bg-dark-subtle: #23262e;
+    --bg-light: #f4f4f0;
+    --bg-light-surface: #ffffff;
+    --border-muted: #272a30;
+    --border-light: #d1d5db;
+    --text-muted: #9ca3af;
+    --text-subtle: #4b5563;
+    --text-light: #f4f4f0;
+    --text-dark: #0f1115;
+  }
+}
+
+@theme {
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-primary-hover: var(--brand-primary-hover);
+  --color-bg-dark: var(--bg-dark);
+  --color-bg-dark-surface: var(--bg-dark-surface);
+  --color-bg-dark-subtle: var(--bg-dark-subtle);
+  --color-bg-light: var(--bg-light);
+  --color-bg-light-surface: var(--bg-light-surface);
+  --color-border-muted: var(--border-muted);
+  --color-border-light: var(--border-light);
+  --color-text-muted: var(--text-muted);
+  --color-text-subtle: var(--text-subtle);
+  --color-text-light: var(--text-light);
+  --color-text-dark: var(--text-dark);
+
+  --font-display: "Oswald", "Montserrat", sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+.hazard-stripe {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--brand-primary),
+    var(--brand-primary) 12px,
+    #000000 12px,
+    #000000 24px
+  );
+}
