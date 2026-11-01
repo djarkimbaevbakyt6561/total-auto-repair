@@ -48,7 +48,7 @@ export function Header() {
       <MainWrapper>
         <div className={headerClasses.mainBar()}>
           {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="w-24 flex items-center gap-3 group">
             <Image src="/logo.png" alt="Logo" width={148} height={150} />
           </Link>
 
@@ -66,12 +66,15 @@ export function Header() {
           </nav>
 
           {/* Call to Action Buttons */}
-          <Link
-            href="#quote"
-            className={buttonVariants({ intent: "primary", size: "md" })}
-          >
-            Schedule an Appointment
-          </Link>
+          <div className="">
+            <Link
+              href="#contact"
+              className={buttonVariants({ intent: "primary", size: "md" })}
+            >
+              <span className="hidden sm:inline">Schedule an Appointment</span>
+              <span className="sm:hidden">Book Now</span>
+            </Link>
+          </div>
         </div>
       </MainWrapper>
     </header>
